@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src='bower_components/jquery/dist/jquery.min.js'></script>
+  <script src='bower_components/angular/angular.min.js'></script>
+  <script src='bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
+  
+</head>
+<body ng-app='auction'>
+  <h1>Auction</h1>
+  <div ui-view></div>
+  <script src='src/app.js'></script>
+  <script>
+    // var socket = io.connect('http://localhost');
+    // socket.on('news', function (data) {
+    //   console.log(data);
+    //   socket.emit('my other event', { my: 'data' });
+    // });
+  </script>
+</body>
+</html>

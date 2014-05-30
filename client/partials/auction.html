@@ -1,0 +1,28 @@
+<div ng-controller='AuctionCtrl' ng-init='init()'>
+  <div class='playerName'>
+    <div class='notLoggedIn' ng-hide='loggedIn'>
+      <p>You are not logged in. Sign in as: </p>
+      <form>
+        <input type='text' placeholder='Your Name' ng-model='newPlayerName' ng-keydown='doKeyLogin($event)'></input>
+        <input type='submit' value='Login' ng-click='doClickLogin()'
+      </form>
+    </div>
+
+    <div class='loggedIn' ng-show='loggedIn'>
+      <p>You are logged in as {{newPlayerName}}</p>
+      <button class='logOut' ng-click='doLogout()'>Logout</button>
+    </div>
+
+  </div>
+  <h1>Team</h1>
+  <div ng-repeat='bid in bids'>
+    <span class='team'>{{bid.team}}</span>
+    <span class='bid'>{{bid.currentBid}}</span>
+    <span class='player'>{{bid.player}}</span> 
+    <button class='standardBid' ng-click='doStandardBid(bid.team)'>
+      Standard Bid
+    </button>
+    <input type='number' class='bigBidAmount' placeholder='Raise To'ng-model='bigBidTo' \>
+    <button class='bigBid' ng-click='doBigBid(bid.team, bigBidTo)'>Extra Big Bid!</button>
+  </div>
+</div>
