@@ -1,15 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+  <link rel='stylesheet' href='bower_components/bootstrap/dist/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='styles/style.css'>
+
   <script src="/socket.io/socket.io.js"></script>
   <script src='bower_components/jquery/dist/jquery.min.js'></script>
   <script src='bower_components/angular/angular.min.js'></script>
   <script src='bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
+  <script src='bower_components/bootstrap/dist/js/bootstrap.min.js'></script>
   
 </head>
 <body ng-app='auction'>
-  <h1>Auction</h1>
-  <div ui-view></div>
+  <!-- <div ui-view></div> -->
+  <div class='container-fluid' ng-controller='AuctionCtrl' ng-init='init()'>
+    <h1>WC2014-Auction</h1>
+    <div class='playerName'>
+      <div class='notLoggedIn' ng-hide='loggedIn'>
+        <p>You are not logged in. Sign in as: </p>
+        <form>
+          <input type='text' placeholder='Your Name' ng-model='newPlayerName' ng-keydown='doKeyLogin($event)'></input>
+          <input type='submit' value='Login' ng-click='doClickLogin()'
+        </form>
+      </div>
+
+      <div class='loggedIn' ng-show='loggedIn'>
+        <span>You are logged in as {{newPlayerName}}</span>
+        <button class='logOut' ng-click='doLogout()'>Logout</button>
+      </div>
+
+    </div>
+    <h2>Teams</h2>
+    <div class='teams'>
+      <div class='team' ng-repeat='bid in bids'>
+        <div class='teamItem teamName'>{{bid.team}}</div>
+        <div class='teamItem bid'>{{bid.currentBid}}</div>
+        <div class='teamItem player'>{{bid.player}}</div> 
+        <button class='standardBid' ng-click='doStandardBid(bid.team)'>
+          Standard Bid
+        </button>
+        <input type='text' class='bigBidAmount' placeholder='Raise To'ng-model='bigBidTo' \>
+        <button class='bigBid' ng-click='doBigBid(bid.team, bigBidTo)'>Extra Big Bid!</button>
+      </div>
+    </div>
+  </div>
+
   <script src='src/app.js'></script>
   <script>
     // var socket = io.connect('http://localhost');

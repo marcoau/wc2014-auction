@@ -2,52 +2,52 @@ angular.module('auction', ['ui.router'])
 .constant('appConfig', {
   host: 'http://127.0.0.1:8888'
 })
-.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
-  $urlRouterProvider.otherwise('/login');
+// .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+//   $urlRouterProvider.otherwise('/auction');
 
-  $stateProvider
-    .state('login', {
-      url: '/login',
-      templateUrl: 'partials/login.html',
-      controller: 'LoginCtrl'
-    })
-    .state('auction', {
-      url: '/auction',
-      templateUrl: 'partials/auction.html'
-      // controller: 'AuctionCtrl'
-    })
-    .state('error', {
-      url: '/error',
-      templateUrl: 'partials/error.html'
-    });
-}])
-.controller('LoginCtrl', ['$rootScope', '$scope', '$state', 'appConfig', function($rootScope, $scope, $state, appConfig){
+//   $stateProvider
+//     .state('login', {
+//       url: '/login',
+//       templateUrl: 'partials/login.html',
+//       controller: 'LoginCtrl'
+//     })
+//     .state('auction', {
+//       url: '/auction',
+//       templateUrl: 'partials/auction.html'
+//       // controller: 'AuctionCtrl'
+//     })
+//     .state('error', {
+//       url: '/error',
+//       templateUrl: 'partials/error.html'
+//     });
+// }])
+// .controller('LoginCtrl', ['$rootScope', '$scope', '$state', 'appConfig', function($rootScope, $scope, $state, appConfig){
 
-  // $rootScope.Socket = io.connect('http://localhost');
-  // $rootScope.Socket.on('news', function (data) {
-  //   console.log(data);
-  //   $rootScope.Socket.emit('my other event', { my: 'data' });
-  // });
+//   // $rootScope.Socket = io.connect('http://localhost');
+//   // $rootScope.Socket.on('news', function (data) {
+//   //   console.log(data);
+//   //   $rootScope.Socket.emit('my other event', { my: 'data' });
+//   // });
 
-  // $scope.doLogin = function(){
-  //   console.log('doLogin');
-  //   $state.transitionTo('auction');
-  //   $rootScope.Socket.on('serverLoadBids', function(data){
-  //     $rootScope.$apply(function(){
-  //       $rootScope.bids = data.bids;        
-  //     })
-  //     console.log($scope.bids);
-  //   });
-  //   $rootScope.Socket.emit('userLogin', {name: $scope.name});
-  // }
+//   // $scope.doLogin = function(){
+//   //   console.log('doLogin');
+//   //   $state.transitionTo('auction');
+//   //   $rootScope.Socket.on('serverLoadBids', function(data){
+//   //     $rootScope.$apply(function(){
+//   //       $rootScope.bids = data.bids;        
+//   //     })
+//   //     console.log($scope.bids);
+//   //   });
+//   //   $rootScope.Socket.emit('userLogin', {name: $scope.name});
+//   // }
 
-  // console.log('hello');
-  // $scope.doLogin = function(){
-  //   console.log('doLogin');
-  //   // $rootScope.socket = io(appConfig.host);
-  // };
+//   // console.log('hello');
+//   // $scope.doLogin = function(){
+//   //   console.log('doLogin');
+//   //   // $rootScope.socket = io(appConfig.host);
+//   // };
 
-}])
+// }])
 
 .controller('AuctionCtrl', ['$scope', '$state', function($scope, $state){
   

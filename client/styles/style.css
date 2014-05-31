@@ -1,0 +1,90 @@
+body{
+  text-align: center;
+  background: url(/../img/bigbg.jpg);
+  background-size: cover;
+
+}
+h1{
+  font-size: 72px;
+}
+.teams{
+  width: 90%;
+}
+.team{
+  text-align: center;
+  width: 800px;
+  margin: 5px 0 5px 0;
+  font-size: 16px;
+}
+.teamItem{
+  text-align: left;
+  display: inline-block;
+  width: 10%;
+}
+.teamName{
+  width: 20%;
+  font-size: 20px;
+}
+.bid{
+  width: 10%;
+  font-size: 24px;
+  font-weight: bold;
+  color: red;
+}
+.player{
+  font-size: 20px;
+}
+.bigBidAmount{
+  width: 15%;
+}
+
+button{
+  border: 0;
+  padding: 5px;
+}
+
+
+
+.standardBid, .bigBid{
+  color: white;
+  background-color: blue;
+}
+.standardBid:hover, .bigBid:hover{
+  color: white;
+  background-color: red;
+}
+.standardBid:active, .bigBid:active{
+  color: yellow;
+  background-color: red;
+}
+
+
+@media all and (max-width: 768px) {
+  h1, h2{
+    font-size: 24px;
+  }
+  body{
+    /*text-align: center;*/
+    background: url(/../img/smallbg.jpg);
+    background-size: cover;
+  }
+  .teams{
+    width: 90%;
+    text-align: center;
+    margin: 0 auto 0 auto;
+  }
+  .team{
+    width: 100%;
+  }
+  .team, .teamName, .bid, .player{
+    font-size: 12px;
+    margin: 0;
+  }
+  .standardBid, .bigBid{
+    background-color: yellow;
+    color: red;
+
+    font-size: 12px;
+    padding: 0;
+  }
+}
